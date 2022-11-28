@@ -246,10 +246,6 @@ img {
   border-color: transparent;
   cursor: pointer;
 
-  transition-property: color, background-color;
-  transition-duration: 300ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -586,6 +582,7 @@ img {
 
 .footer-container {
   display: flex;
+  justify-content: space-between;
   align-items: baseline;
 }
 .footer-contacts {
@@ -641,7 +638,7 @@ img {
 }
 
 .footer-connection-container {
-  margin-right: auto;
+  /* margin-right: auto; */
 }
 .footer-connection-title {
   margin-bottom: 20px;
@@ -666,6 +663,64 @@ img {
 
 .footer-connection-container .socials-icon {
   fill: var(--footer-icon-color);
+}
+
+.footer-subscription-container {
+  display: block;
+}
+.footer-subscription-wrapper {
+  display: flex;
+}
+
+.footer-form-subscription {
+  width: 360px;
+  height: 50px;
+  margin-right: 12px;
+
+  background-color: #2f303a;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.footer-form-subscription:hover,
+.footer-form-subscription:focus {
+  color: #eeeeee;
+}
+
+.footer-subscription-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: calc(30 / 16);
+  letter-spacing: 0.06em;
+
+  color: #ffffff;
+  background: var(--link-decoration-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border-color: transparent;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    outline 250ms cubic-bezier(33, 150, 243, 1);
+}
+
+.footer-subscription-button:hover,
+.footer-subscription-button:focus {
+  color: var(--hero-btn-color);
+  background-color: var(--link-active);
+  box-shadow: var(--btn-box-shadow);
+  outline: 1px solid var(--link-decoration-color);
+}
+
+.subscription-icon {
+  margin-left: 10px;
+  fill: #ffffff;
 }
 
 /* Modal window */
@@ -726,6 +781,12 @@ img {
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-btn:hover,
+.modal-btn:focus {
+  fill: var(--link-decoration-color);
 }
 
 .modal-form-wrapper {
@@ -733,16 +794,25 @@ img {
   margin-bottom: 10px;
 }
 
-.modal-form-field {
+.modal-form-wrapper {
   width: 100%;
   height: 40px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 30px;
+
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   outline: 1px solid transparent;
   outline-offset: -1px;
-  transition: outline, box-shadow;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-wrapper:hover,
+.modal-form-wrapper:focus,
+.modal-form-comment:hover,
+.modal-form-comment:focus {
+  border: 1px solid var(--link-decoration-color);
+  fill: var(--link-decoration-color);
 }
 
 .modal-label {
@@ -765,6 +835,14 @@ img {
   color: #757575;
 }
 
+.modal-form-field {
+  width: 100%;
+  height: 100%;
+
+  background-color: transparent;
+  border: none;
+}
+
 .modal-form-icon {
   position: absolute;
   top: 50%;
@@ -772,7 +850,7 @@ img {
 
   transform: translateY(-50%);
 
-  transition: fill var(--anim-fast);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-form-comment {
@@ -787,13 +865,27 @@ img {
   border: 1px solid #9da4bd;
   outline: 1px solid transparent;
   outline-offset: -1px;
-  transition: outline var(--anim-fast), box-shadow var(--anim-fast);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   resize: none;
 }
 
+.modal-form-checkbox {
+  width: 16px;
+  height: 15px;
+}
+
 .modal-form-agreement {
   margin-bottom: 30px;
+}
+
+.modal-form-agreement-label {
+  color: #757575;
+}
+
+.modal-form-agreement-link {
+  color: var(--link-decoration-color);
 }
 
 .modal-form-button {
@@ -808,7 +900,14 @@ img {
   letter-spacing: 0.06em;
 
   color: #ffffff;
-  background: #2196f3;
+  background: var(--link-decoration-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+  border-color: transparent;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-button:hover,
+.modal-form-button:focus {
+  background-color: #188ce8;
 }
