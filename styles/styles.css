@@ -791,8 +791,6 @@ img {
 .modal-form-wrapper {
   position: relative;
   margin-bottom: 10px;
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-form-field {
@@ -804,15 +802,20 @@ img {
   border-radius: 4px;
   outline: 1px solid transparent;
   outline-offset: -1px;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-form-wrapper:hover,
-.modal-form-wrapper:focus,
+.modal-form-field:hover + .modal-form-icon,
+.modal-form-field:focus + .modal-form-icon {
+  fill: var(--link-decoration-color);
+}
+
+.modal-form-field:hover,
+.modal-form-field:focus,
 .modal-form-comment:hover,
 .modal-form-comment:focus {
-  border-radius: 4px;
   border: 1px solid var(--link-decoration-color);
-  fill: var(--link-decoration-color);
 }
 
 .modal-label {
